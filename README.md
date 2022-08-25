@@ -1,5 +1,5 @@
 # VIenna Science and Engineering (VISE) web
-[![Upload S3 bucket](https://github.com/JoseGuzman/vise-og/actions/workflows/uploadS3.yml/badge.svg?branch=master&event=push)](https://github.com/JoseGuzman/vise-og/actions/workflows/uploadS3.yml)
+[![Upload S3 bucket](https://github.com/JoseGuzman/vise-og/actions/workflows/uploadS3.yml/badge.svg)](https://github.com/JoseGuzman/vise-og/actions/workflows/uploadS3.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/joseguzman/vise-og/badge?s=de5b6b8865e10fff99dc09eeadd25d16bd3f873e)](https://www.codefactor.io/repository/github/joseguzman/vise-og)
 
 The VISE web is adapated from the [Agency theme](https://github.com/startbootstrap/startbootstrap-agency) created by [Start Bootstrap](https://startbootstrap.com). 
