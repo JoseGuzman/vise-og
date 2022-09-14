@@ -5,7 +5,7 @@ name: Upload S3 bucket
 on:
   push:
     branches:
-        - master
+        - main
 
   # permits to run workflow manually
   workflow_dispatch:
