@@ -1,16 +1,24 @@
+/*
+mytest.j
+Author: Jose Guzman
+
+Handles data submission from contact form  
+
+*/
 const form = document.querySelector('form');
 
-const submitResponse = document.querySelector('#response');
+//const submitResponse = document.querySelector('#response');
+const submitResponse = document.getElementById('response');
 const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm';
 
-form.onsubmit = e => {
-    e.preventDefault();
+form.onsubmit = event => {
+    event.preventDefault(); // prevent POST action cause there's no webserver
 
-    // Capture the form data
+    // Capture form data
     let data = {};
     Array.from(form).map(input => (data[input.id] = input.value));
-    console.log('Sending: ', JSON.stringify(data));
-    submitResponse.innerHTML = 'Sending...'
+    console.log('Sending: ', JSON.stringify(data)); 
+    submitResponse.innerHTML = 'Sending...' // CHECK!
 
     // Create the AJAX request
     var xhr = new XMLHttpRequest();
