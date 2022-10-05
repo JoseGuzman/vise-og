@@ -6,6 +6,19 @@
 //
 // Scripts
 // 
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", event=> {
+    // prevent the form submit from refreshing the page
+    event.preventDefault()
+
+    const {name, email, phone, message} = event.target
+
+    console.log(name.value)
+    console.log(email.value)
+    console.log(phone.value)
+    console.log(message.value)
+});
 
 window.addEventListener('DOMContentLoaded', event => {
 
