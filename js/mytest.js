@@ -1,11 +1,15 @@
 /*
-mytest.j
-Author: Jose Guzman
+* mytest.j
+* Author: Jose Guzman
+* 
+* Handles data submission from a POST to replace it with a JavaScript handler
+* that will submit the post data and update the user interface. We post the form
+* data to APT Gateway and use asynchronous JavaScript (AJAX) to provide feedback
+* dinamically on the front end.
 
-Handles data submission from contact form  
-see detailed explanation here:
-https://medium.com/@jbesw/forms-without-servers-handling-form-submissions-with-lambda-4df9ec5fc473
-
+* see detailed explanation here:
+* https://medium.com/@jbesw/forms-without-servers-handling-form-submissions-with-lambda-4df9ec5fc473
+* 
 */
 const form = document.querySelector('form');
 
@@ -14,6 +18,8 @@ const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm';
 
 form.onsubmit = event => {
     event.preventDefault(); // prevent POST action cause there's no webserver
+    const {email, name, message} = event.target
+    // console.log('Name', name.value )
 
     // Capture form data and create JSON object
     let data = {};
@@ -33,7 +39,7 @@ form.onsubmit = event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            submitResponse.innerHTML = 'Form submitted. Success!';
+            submitResponse.innerHTML = 'Form submitted successfully!' + name.value;
         } else {
             submitResponse.innerHTML = 'Error! Please try again.';
             console.error(JSON.parse(response));

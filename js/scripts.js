@@ -10,7 +10,7 @@ const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", event=> {
     // prevent the form submit from refreshing the page
-    event.preventDefault()
+    event.preventDefault();
 
     const {name, email, phone, message} = event.target
 
