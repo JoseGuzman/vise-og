@@ -14,7 +14,8 @@
 const form = document.querySelector('form');
 
 const submitResponse = document.querySelector('#response');
-const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm';
+const formURL = 'https://0wnkn27dx7.execute-api.eu-central-1.amazonaws.com/testing/myTest';
+// const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm'; 
 
 form.onsubmit = event => {
     event.preventDefault(); // prevent POST action cause there's no webserver
@@ -24,8 +25,8 @@ form.onsubmit = event => {
     // Capture form data and create JSON object
     let data = {};
     Array.from(form).map(input => (data[input.id] = input.value));
-    console.log('Sending: ', JSON.stringify(data)); 
-    submitResponse.innerHTML = 'Sending...' // display user feedback before start 
+    console.log('Form sending: ', JSON.stringify(data)); 
+    submitResponse.innerHTML = 'Form sending...' // display user feedback before start 
 
     // Create the AJAX request (permit interact directly with user)
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint
