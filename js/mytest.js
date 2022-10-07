@@ -14,12 +14,12 @@
 const form = document.querySelector('form');
 
 const submitResponse = document.querySelector('#response');
-const formURL = 'https://0wnkn27dx7.execute-api.eu-central-1.amazonaws.com/testing/myTest';
+const formURL = 'https://ahvjq7cf07.execute-api.eu-central-1.amazonaws.com/default/sendContactEmail';
 // const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm'; 
 
 form.onsubmit = event => {
     event.preventDefault(); // prevent POST action cause there's no webserver
-    const {email, name, message} = event.target
+    const {email, name, message} = event.target;
     // console.log('Name', name.value )
 
     // Capture form data and create JSON object
@@ -34,7 +34,7 @@ form.onsubmit = event => {
     xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-    // Send the collected data as JSON
+    // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
 
     xhr.onloadend = response => {
