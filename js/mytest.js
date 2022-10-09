@@ -14,8 +14,8 @@
 const form = document.querySelector('form');
 
 const submitResponse = document.querySelector('#response');
-const formURL = 'https://ahvjq7cf07.execute-api.eu-central-1.amazonaws.com/default/sendContactEmail';
 // const formURL = 'https:// << ENTER YOUR API ENDPOINT HERE >> /Prod/submitForm'; 
+const formURL = 'https://ltcrnqpvkb.execute-api.eu-central-1.amazonaws.com/test/transactions';
 
 form.onsubmit = event => {
     event.preventDefault(); // prevent POST action cause there's no webserver
@@ -26,12 +26,12 @@ form.onsubmit = event => {
     let data = {};
     Array.from(form).map(input => (data[input.id] = input.value));
     console.log('Form sending: ', JSON.stringify(data)); 
-    submitResponse.innerHTML = 'Form sending...' // display user feedback before start 
+    submitResponse.innerHTML = 'Message sent!' // display user feedback before start 
 
     // Create the AJAX request (permit interact directly with user)
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint
     xhr.open(form.method, formURL, true);
-    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // Send the collected data as JSON string
@@ -40,7 +40,7 @@ form.onsubmit = event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            submitResponse.innerHTML = 'Form submitted successfully!' + name.value;
+            submitResponse.innerHTML = 'Form submitted successfully!';
         } else {
             submitResponse.innerHTML = 'Error! Please try again.';
             console.error(JSON.parse(response));
