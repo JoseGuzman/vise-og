@@ -7,17 +7,28 @@
 // Scripts
 // 
 const form = document.getElementById("contactForm");
+const formURL = 'https://ltcrnqpvkb.execute-api.eu-central-1.amazonaws.com/test/transactions';
 
 form.addEventListener("submit", event=> {
     // prevent the form submit from refreshing the page
     event.preventDefault();
 
-    const {name, email, phone, message} = event.target
+    const {name, email, phone, message} = event.target;
 
-    console.log(name.value)
-    console.log(email.value)
-    console.log(phone.value)
-    console.log(message.value)
+    console.log(name.value);
+    console.log(email.value);
+    //console.log(phone.value)
+    console.log(message.value);
+    const BODY = JSON.stringify(
+        {
+            name: name.value,
+            email: email.value,
+            message: message.value
+        }
+    );
+
+    const requestOptions = {method:'GET', body};
+
 });
 
 window.addEventListener('DOMContentLoaded', event => {
