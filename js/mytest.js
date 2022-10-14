@@ -43,23 +43,35 @@ form.addEventListener("submit", event => {
         body: JSON.stringify(data)
     };
 
-    //mymsg = "Thank you for sending a message, ";
-    //document.getElementById("output-message").innerHTML=mymsg + data.name;
-    //form.reset();
+    // Create the AJAX request (permit interact directly with user) //var xhr = new XMLHttpRequest(); // handle to send to API endpoint //xhr.open(form.method, formURL, true);
+    xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-    fetch(endPoint, requestOptions)
-    .then((response) => {
-        console.log('respose->', response)
-        if (!response.ok) throw new Error("Error in fetch");
-        return response.json();
-    })
-    .then((response) => {
-        form.reset();
-        document.getElementById("output_text").innerText = "Email sent successfully!";
-    })
-    .catch((error) => {
-        document.getElementById("output_text").innerText ="An unkown error occured.";
-    });
+    // Send the collected data as JSON string
+    xhr.send(JSON.stringify(data));
+
+    xhr.onloadend = response => {
+        if (response.target.status === 200) {
+            form.reset();
+            submitResponse.innerHTML = 'Form submitted successfully!';
+        } else {
+            submitResponse.innerHTML = 'Error! Please try again.';
+            console.error(JSON.parse(response));
+            }
+    };
+    //fetch(endPoint, requestOptions)
+    //.then((response) => {
+    //    console.log('respose->', response)
+    //    if (!response.ok) throw new Error("Error in fetch");
+    //    return response.json();
+    //})
+    //.then((response) => {
+    //    form.reset();
+    //    document.getElementById("output_text").innerText = "Email sent successfully!";
+    //})
+    //.catch((error) => {
+    //    document.getElementById("output_text").innerText ="An unkown error occured.";
+    //};
 
 });
 
