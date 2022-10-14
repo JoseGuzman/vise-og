@@ -16,12 +16,12 @@ const button = document.querySelector("button");
 const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
 
 
+/* Dummy to run lambda function */
 async function getData(){
     const res = await fetch(endPoint);
     const data = await res.json();
     console.log(data)
 }
-
 
 button.addEventListener("click", getData);
 
@@ -55,7 +55,7 @@ form.addEventListener("submit", event => {
             submitResponse.innerHTML = 'Form submitted successfully!';
         } else {
             submitResponse.innerHTML = 'Error! Please try again.';
-            console.error(JSON.parse(response));
+            //console.error(JSON.parse(response));
             }
     };
     //fetch(endPoint, requestOptions)
