@@ -54,6 +54,7 @@ form.addEventListener("submit", event => {
         return response.json();
     })
     .then((response) => {
+        form.reset();
         document.getElementById("output_text").innerText = "Email sent successfully!";
     })
     .catch((error) => {
