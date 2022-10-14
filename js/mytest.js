@@ -42,7 +42,7 @@ form.addEventListener("submit", event => {
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
     xhr.open("POST", endPoint, true);
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
-    //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     // Send the collected data as JSON string
