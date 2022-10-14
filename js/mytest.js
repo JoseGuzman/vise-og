@@ -52,6 +52,7 @@ form.addEventListener("submit", event => {
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
 
+    const submitResponse = document.getElementById("output_text");
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
