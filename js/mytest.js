@@ -38,17 +38,11 @@ form.addEventListener("submit", event => {
     };
     console.log('Form sending: ', JSON.stringify(data)); 
 
-    const myHeaders = new Headers();
-    const headers = {'Content-Type':'application/json',
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}
-
     const requestOptions = {
         method: "POST",
-        headers: myHeaders,
         body: JSON.stringify(data)
     };
-    // on clear
+
     //mymsg = "Thank you for sending a message, ";
     //document.getElementById("output-message").innerHTML=mymsg + data.name;
     //form.reset();
@@ -91,9 +85,7 @@ form.addEventListener("submit", event => {
     //console.log('Form sending: ', JSON.stringify(data)); 
     //submitResponse.innerHTML = 'Message sent!' // display user feedback before start 
 
-    // Create the AJAX request (permit interact directly with user)
-    //var xhr = new XMLHttpRequest(); // handle to send to API endpoint
-    //xhr.open(form.method, formURL, true);
+    // Create the AJAX request (permit interact directly with user) //var xhr = new XMLHttpRequest(); // handle to send to API endpoint //xhr.open(form.method, formURL, true);
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
