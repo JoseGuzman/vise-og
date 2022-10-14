@@ -48,6 +48,7 @@ form.addEventListener("submit", event => {
     xhr.open(form.method, endPoint, true);
     xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
