@@ -53,6 +53,7 @@ form.addEventListener("submit", event => {
         if (response.target.status === 200) {
             form.reset();
             submitResponse.innerHTML = 'Form submitted successfully!';
+            console.log(response)
         } else {
             submitResponse.innerHTML = 'Error! Please try again.';
             //console.error(JSON.parse(response));
