@@ -12,6 +12,7 @@ https://medium.com/@jbesw/forms-without-servers-handling-form-submissions-with-l
 */
 console.log("loading script");
 const form = document.querySelector("form");
+const testform = document.querySelector("form[name=testForm");
 const button = document.querySelector("button");
 const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
 
@@ -22,6 +23,25 @@ async function getData(){
     const data = await res.json();
     console.log(data)
 }
+
+/*
+logData(event) print events logs in JavaScript console
+*/
+async function logData(event){
+    event.preventDefault(); // prevent refreshing the page 
+    const {name, email, message} = event.target;
+
+    let data = {
+        name: name.value,
+        email: email.value,
+        message: message.value
+    };
+    console.log('Form sending: ', JSON.stringify(data)); 
+    
+
+}
+
+testform.addEventListener("submit", logData);
 
 button.addEventListener("click", getData);
 
