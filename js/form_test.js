@@ -32,8 +32,12 @@ form.addEventListener("submit", event => {
     // Create the AJAX request (permit interact directly with user) 
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
     xhr.open("POST", endPoint, true);
-    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type");
+    xhr.setRequestHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
+    //xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+
+    //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
