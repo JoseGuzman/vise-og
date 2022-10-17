@@ -2,7 +2,7 @@
 aws_test.js
 Author: Jose Guzman
 
-Handles data submission from a POST to replace it with a JavaScript handler
+Handles data submission from a button to replace it with a JavaScript handler
 that will submit the post data and update the user interface. We post the form
 data to APT Gateway and use asynchronous JavaScript (AJAX) to provide feedback
 dinamically on the front end.
@@ -13,7 +13,8 @@ const endPoint = 'https://fuuzzxm0gh.execute-api.eu-central-1.amazonaws.com/defa
 
 const button = document.querySelector("button");
 
-/* run lambda function 
+/* getData()
+run lambda function 
     and prints its output in the field of the document
 */
 async function getData(){
@@ -21,7 +22,7 @@ async function getData(){
     const data = await res.json();
 
     const message = document.getElementById("output_text");
-    message.innerHTML(message);
+    message.innerHTMLi = data;
     console.log(data);
 }
 
