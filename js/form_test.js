@@ -32,16 +32,15 @@ form.addEventListener("submit", event => {
     // Create the AJAX request (permit interact directly with user) 
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
     xhr.open("POST", endPoint, true);
-    xhr.setRequestHeader("X-PINGOTHER", "pingpong");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xhr.setRequestHeader("Access-Control-Allow-Headers", "*");
+    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // Send the collected data as JSON string
-    //xhr.send(JSON.stringify(data));
-    xhr.send("<person><name>Jose</name></person>")
+    xhr.send(JSON.stringify(data));
+    //xhr.send("<person><name>Jose</name></person>")
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
