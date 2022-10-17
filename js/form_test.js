@@ -11,6 +11,8 @@
 * Resources:
 * 1. Cloudlogs https://www.youtube.com/watch?v=vgl9q5Ox5LE
 * https://medium.com/@jbesw/forms-without-servers-handling-form-submissions-with-lambda-4df9ec5fc473
+* 
+* Key to understand CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests
 */
 
 console.log("loading form_test.js");
@@ -39,8 +41,8 @@ form.addEventListener("submit", event => {
 
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-    //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
-    //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
