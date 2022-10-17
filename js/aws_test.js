@@ -9,10 +9,9 @@ dinamically on the front end.
 
 */
 console.log("loading aws_test.js");
-const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
+const endPoint = 'https://fuuzzxm0gh.execute-api.eu-central-1.amazonaws.com/default/myAWSbutton'
 
-const button = document.querySelector('button[name="aws_button"]');
-const button = document.querySelector('#button-aws_button');
+const button = document.querySelector("button");
 
 /* Dummy to run lambda function */
 async function getData(){
