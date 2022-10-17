@@ -11,7 +11,7 @@ dinamically on the front end.
 console.log("loading aws_test.js");
 const endPoint = 'https://fuuzzxm0gh.execute-api.eu-central-1.amazonaws.com/default/myAWSbutton'
 
-const button = document.querySelector("button");
+const mybutton = document.querySelector("button");
 
 /* getData()
 run lambda function 
@@ -21,9 +21,10 @@ async function getData(){
     const res = await fetch(endPoint);
     const data = await res.json();
 
-    const message = document.getElementById("output_text");
-    message.innerHTMLi = data;
+    const msg_text = document.getElementById("output_text");
+    //message.innerHTML = data;
+    msg_text = innerHTML = 'Lambda Sent!.';
     console.log(data);
 }
 
-button.addEventListener("click", getData);
+mybutton.addEventListener("click", getData);
