@@ -8,6 +8,8 @@
 * dinamically on the front end.
 * 
 * see detailed explanation here:
+* Resources:
+* 1. Cloudlogs https://www.youtube.com/watch?v=vgl9q5Ox5LE
 * https://medium.com/@jbesw/forms-without-servers-handling-form-submissions-with-lambda-4df9ec5fc473
 */
 
@@ -31,7 +33,7 @@ form.addEventListener("submit", event => {
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
     xhr.open("POST", endPoint, true);
     xhr.setRequestHeader("X-PINGOTHER", "pingpong");
-    xhr.setRequestHeader("Content-Type", "text/xml");
+    xhr.setRequestHeader("Content-Type", "application/json");
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
