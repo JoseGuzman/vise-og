@@ -12,27 +12,7 @@
 */
 console.log("loading form_test.js");
 const form = document.querySelector("form");
-const testform = document.querySelector("form[name=testForm");
 const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
-
-
-/*
-* logData(event) 
-* print events logs in JavaScript console
-*/
-async function logData(event){
-    event.preventDefault(); // prevent refreshing the page 
-    const {name, email, message} = event.target;
-
-    let data = {
-        name: name.value,
-        email: email.value,
-        message: message.value
-    };
-    console.log('Form sending: ', JSON.stringify(data)); 
-    
-
-}
 
 testform.addEventListener("submit", logData);
 
@@ -58,14 +38,14 @@ form.addEventListener("submit", event => {
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
 
-    const submitResponse = document.getElementById("output_text");
+    const lambdaResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            submitResponse.innerHTML = 'Form submitted successfully!';
+            lambdaResponse.innerHTML = 'Form submitted successfully!';
             console.log(response)
         } else {
-            submitResponse.innerHTML = 'Error! Please try again.';
+            lambdaResponse.innerHTML = 'Error! Please try again.';
             console.error(JSON.parse(response.target.response).message);
             }
     };
