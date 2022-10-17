@@ -13,11 +13,16 @@ const endPoint = 'https://fuuzzxm0gh.execute-api.eu-central-1.amazonaws.com/defa
 
 const button = document.querySelector("button");
 
-/* Dummy to run lambda function */
+/* run lambda function 
+    and prints its output in the field of the document
+*/
 async function getData(){
     const res = await fetch(endPoint);
     const data = await res.json();
-    console.log(data)
+
+    const message = document.getElementById("output_text");
+    message.innerHTML(message);
+    console.log(data);
 }
 
 button.addEventListener("click", getData);
