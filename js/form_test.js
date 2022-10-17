@@ -4,7 +4,7 @@
 * 
 * Handles data submission from a POST to replace it with a JavaScript handler
 * that will submit the post data and update the user interface. We post the form
-* data to APT Gateway and use asynchronous JavaScript (AJAX) to provide feedback
+* data to the API Gateway and use asynchronous JavaScript (AJAX) to provide feedback
 * dinamically on the front end.
 * 
 * see detailed explanation here:
@@ -13,9 +13,6 @@
 console.log("loading form_test.js");
 const form = document.querySelector("form");
 const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
-
-testform.addEventListener("submit", logData);
-
 
 form.addEventListener("submit", event => {
     event.preventDefault(); // prevent refreshing the page
