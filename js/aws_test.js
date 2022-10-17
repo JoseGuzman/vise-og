@@ -2,9 +2,9 @@
 * aws_test.js
 * Author: Jose Guzman
 * 
-* Handles data submission from a button to replace it with a JavaScript handler
-* that will submit the post data and update the user interface. We post the form
-* data to APT Gateway and use asynchronous JavaScript (AJAX) to provide feedback
+* Handles data submission from a button to call a lambda function that returns
+* a HTTP response with statusCode = 200 and body = 'hello from lambda'. We need and
+* API Gateway to call lambda and to provide feedback
 * dinamically on the front end.
 * 
 */
@@ -23,8 +23,7 @@ async function getData(){
 
     const msg_text = document.getElementById("output_text");
     msg_text.innerHTML = data;
-    //msg_text.innerHTML = 'Lambda Sent!.';
     console.log(data);
 }
 
-mybutton.addEventListener("click", getData);
+mybutton.addEventListener("click", getData, false);
