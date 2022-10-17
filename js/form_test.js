@@ -34,7 +34,7 @@ form.addEventListener("submit", event => {
     xhr.open("POST", endPoint, true);
     xhr.setRequestHeader("X-PINGOTHER", "pingpong");
     xhr.setRequestHeader("Content-Type", "application/json");
-    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Access-Control-Allow-Headers", "*");
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
