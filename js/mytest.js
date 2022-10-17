@@ -1,5 +1,5 @@
 /*
-* mytest.j
+* form_test.js
 * Author: Jose Guzman
 * 
 * Handles data submission from a POST to replace it with a JavaScript handler
