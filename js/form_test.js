@@ -45,7 +45,8 @@ form.addEventListener("submit", event => {
             console.log(response)
         } else {
             formResponse.innerHTML = 'Error! Please try again.';
-            console.error(JSON.parse(response.target.response).message);
+            console.log(response);
+            //console.error(JSON.parse(response.target.response).message);
             }
     };
 });
