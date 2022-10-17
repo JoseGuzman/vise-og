@@ -23,7 +23,7 @@ async function getData(){
 
     const msg_text = document.getElementById("output_text");
     //message.innerHTML = data;
-    msg_text = innerHTML = 'Lambda Sent!.';
+    msg_text.innerHTML = 'Lambda Sent!.';
     console.log(data);
 }
 
