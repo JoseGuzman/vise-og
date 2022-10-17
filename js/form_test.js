@@ -12,7 +12,8 @@
 */
 console.log("loading form_test.js");
 const form = document.querySelector("form");
-const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
+const endPoint = 'https://6v9qsgq7g0.execute-api.eu-central-1.amazonaws.com/default/myTest';
+//const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
 
 form.addEventListener("submit", event => {
     event.preventDefault(); // prevent refreshing the page
