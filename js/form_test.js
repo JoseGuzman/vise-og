@@ -38,7 +38,7 @@ form.addEventListener("submit", event => {
     //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-    // Send the collected data as JSON string
+    // Send the collected data as JSON in html  
     xhr.send(JSON.stringify(data));
     console.log('Form sending: ', JSON.stringify(data)); 
 
@@ -47,13 +47,13 @@ form.addEventListener("submit", event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = `Thank you ${data.name}, ${xhr.responseText}`;
+            formResponse.innerHTML = `Thank you ${data.name}, your ${xhr.responseText}`;
         } else {
             formResponse.innerHTML = "Error! Please try again.";
             var error = JSON.parse(response.target)
             //console.error(JSON.parse(response.target.response).message);
         }
 
-        console.log('lambda response:', xhr.responseText);
+        console.log('AWS lambda response:', xhr.responseText);
     };
 });
