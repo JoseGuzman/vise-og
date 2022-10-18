@@ -45,6 +45,7 @@ form.addEventListener("submit", event => {
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
+        console.log(response);
         if (response.target.status === 200) {
             form.reset();
             formResponse.innerHTML = 'Form submitted successfully!';
