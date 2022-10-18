@@ -1,15 +1,11 @@
 /*
-* Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+* scripts.js 
+* Jose Guzman
 */
-//
-// Scripts
-// 
+
 console.log("loading scripts.js");
 const form = document.querySelector("form");
 const endPoint = 'https://17fkopracb.execute-api.eu-central-1.amazonaws.com/default/SendContactForm'
-//const endPoint = 'https://6v9qsgq7g0.execute-api.eu-central-1.amazonaws.com/default/myTest';
 
 form.addEventListener("submit", event => {
     event.preventDefault(); // prevent refreshing the page
@@ -40,7 +36,7 @@ form.addEventListener("submit", event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = `Thank you ${data.name}, your ${xhr.responseText}`;
+            formResponse.innerHTML = `Thank you ${data.name}, ${xhr.responseText}`;
         } else {
             formResponse.innerHTML = "Error! Please try again.";
             //var error = JSON.parse(response.target)
@@ -52,6 +48,11 @@ form.addEventListener("submit", event => {
     };
 });
 
+/*
+* Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
+* Copyright 2013-2022 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+*/
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
