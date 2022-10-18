@@ -29,27 +29,31 @@ form.addEventListener("submit", event => {
         message: message.value
     };
 
-    // Create the AJAX request (permit interact directly with user) 
+    // Create the AJAX request 
+    // Asynchronous JavaScript and XML, need open() and send() calls 
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
     xhr.open("POST", endPoint, true);
 
+    // Send the proper header information along with the request
     xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
     console.log('Form sending: ', JSON.stringify(data)); 
+    console.log('lambda response:', xhr.responseText);
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
-        console.log('xhr loadend');
+        console.log('xhr loadend:');
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = 'Form submitted successfully!';
+            formResponse.innerHTML = 'Thank you $name, form submitted successfully!';
         } else {
             formResponse.innerHTML = 'Error! Please try again.';
+            var error = JSON.parse(response.target)
             //console.error(JSON.parse(response.target.response).message);
         }
-        console.log('lambda response', response);
+        console.log('lambda response', xhr.responseText);
     };
 });
