@@ -20,21 +20,21 @@
             <div class="form-group">
                 <!-- Name input-->
                 <label for="name">Name</label><br>
-                <input class="form-control" type="text"  id="name" name="name" placeholder="Your name *">
+                <input class="form-control" type="text"  id="name" name="name" placeholder="Your name *" required/>
             </div>
             <div class="form-group">
             <!-- Email input-->
                 <label for="email">Email</label><br>
-                <input class="form-control" type="email" id="email" name="email" placeholder="Your email *">
+                <input class="form-control" type="email" id="email" name="email" placeholder="Your email *" required/>
             </div>
             <div class="form-group">
                 <!-- Message input-->
                 <label for="message">Comment</label><br>
-                <textarea class="form-control" id="message" name="message" placeholder="Enter your message..."></textarea>
+                <textarea class="form-control" id="message" name="message" placeholder="Enter your message..." required/></textarea>
             </div>
             <div class="form-group">
                 <!-- Button (type submit) element must have type and value-->
-                <input class="btn btn-primary" type="submit" id="submit" value="Send Message">
+                <button class="btn btn-primary" type="submit" id="submit" value="Send Message">Send Message</button>
             </div>
             <p id="lambda_text"></p>
         </form>
