@@ -48,7 +48,7 @@ form.addEventListener("submit", event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = "Thank you" + $name + ", your form was submitted successfully!";
+            formResponse.innerHTML = "Thank you" + data.name + ", your form was submitted successfully!";
         } else {
             formResponse.innerHTML = "Error! Please try again.";
             var error = JSON.parse(response.target)
