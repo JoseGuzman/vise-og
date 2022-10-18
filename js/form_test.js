@@ -43,17 +43,18 @@ form.addEventListener("submit", event => {
     console.log('Form sending: ', JSON.stringify(data)); 
     console.log('lambda response:', xhr.responseText);
 
+    // Update the component in the HTML form
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
-        console.log('xhr loadend:');
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = 'Thank you $name, form submitted successfully!';
+            formResponse.innerHTML = "Thank you" + $name + ", your form was submitted successfully!";
         } else {
-            formResponse.innerHTML = 'Error! Please try again.';
+            formResponse.innerHTML = "Error! Please try again.";
             var error = JSON.parse(response.target)
             //console.error(JSON.parse(response.target.response).message);
         }
+
         console.log('lambda response', xhr.responseText);
     };
 });
