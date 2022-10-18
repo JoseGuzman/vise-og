@@ -18,7 +18,6 @@
 console.log("loading form_test.js");
 const form = document.querySelector("form");
 const endPoint = 'https://6v9qsgq7g0.execute-api.eu-central-1.amazonaws.com/default/myTest';
-//const endPoint = "https://wv0upi7zj7.execute-api.eu-central-1.amazonaws.com/default/myTest";
 
 form.addEventListener("submit", event => {
     event.preventDefault(); // prevent refreshing the page
@@ -37,16 +36,12 @@ form.addEventListener("submit", event => {
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type");
     xhr.setRequestHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
-    //xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-
-    //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
-    //xhr.send("<person><name>Jose</name></person>")
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
