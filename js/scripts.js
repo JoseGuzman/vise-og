@@ -7,29 +7,47 @@
 // Scripts
 // 
 console.log("loading scripts.js");
-const form = document.getElementById("contactForm");
-const formURL = 'https://ltcrnqpvkb.execute-api.eu-central-1.amazonaws.com/test/transactions';
+const form = document.querySelector("form");
+const endPoint = 'https://6v9qsgq7g0.execute-api.eu-central-1.amazonaws.com/default/myTest';
 
-form.addEventListener("submit", event=> {
-    // prevent the form submit from refreshing the page
-    event.preventDefault();
+form.addEventListener("submit", event => {
+    event.preventDefault(); // prevent refreshing the page
+    const {email, name, message} = event.target;
+    
+    let data = {
+        name: name.value,
+        email: email.value,
+        message: message.value
+    };
 
-    const {name, email, phone, message} = event.target;
+   // Create the AJAX request 
+    // Asynchronous JavaScript and XML, need open() and send() calls 
+    var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
+    xhr.open("POST", endPoint, true);
 
-    console.log(name.value);
-    console.log(email.value);
-    //console.log(phone.value)
-    console.log(message.value);
-    const BODY = JSON.stringify(
-        {
-            name: name.value,
-            email: email.value,
-            message: message.value
+    // Send the proper header information along with the request
+    //xhr.setRequestHeader('Accept', 'application/json; charset=UTF-8');
+    //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+    // Send the collected data as JSON in html  
+    xhr.send(JSON.stringify(data));
+    console.log('Form sending: ', JSON.stringify(data)); 
+
+    // Update the component in the HTML form
+    const formResponse = document.getElementById("lambda_text");
+    xhr.onloadend = response => {
+        if (response.target.status === 200) {
+            form.reset();
+            formResponse.innerHTML = `Thank you ${data.name}, your ${xhr.responseText}`;
+        } else {
+            formResponse.innerHTML = "Error! Please try again.";
+            //var error = JSON.parse(response.target)
+            //console.error(JSON.parse( response.target.response) );
+            //console.error(JSON.parse(response.target.response).message);
         }
-    );
 
-    const requestOptions = {method:'GET', body};
-
+        console.log('AWS lambda response:', xhr.responseText);
+    };
 });
 
 window.addEventListener('DOMContentLoaded', event => {
