@@ -28,7 +28,6 @@ form.addEventListener("submit", event => {
         email: email.value,
         message: message.value
     };
-    console.log('Form sending: ', JSON.stringify(data)); 
 
     // Create the AJAX request (permit interact directly with user) 
     var xhr = new XMLHttpRequest(); // handle to send to API endpoint 
@@ -42,18 +41,17 @@ form.addEventListener("submit", event => {
 
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
+    console.log('Form sending: ', JSON.stringify(data)); 
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
-        console.log('lambda response:', response);
         if (response.target.status === 200) {
             form.reset();
             formResponse.innerHTML = 'Form submitted successfully!';
-            console.log(response)
         } else {
             formResponse.innerHTML = 'Error! Please try again.';
-            console.log(response);
             //console.error(JSON.parse(response.target.response).message);
             }
+        console.log('lambda response', response);
     };
 });
