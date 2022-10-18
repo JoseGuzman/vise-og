@@ -8,7 +8,7 @@
 // 
 console.log("loading scripts.js");
 const form = document.querySelector("form");
-const endPoint = 'https://17fkopracb.execute-api.eu-central-1.amazonaws.com/default/SendContactForm/'
+const endPoint = 'https://17fkopracb.execute-api.eu-central-1.amazonaws.com/default/SendContactForm'
 //const endPoint = 'https://6v9qsgq7g0.execute-api.eu-central-1.amazonaws.com/default/myTest';
 
 form.addEventListener("submit", event => {
