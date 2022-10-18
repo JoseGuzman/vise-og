@@ -42,13 +42,14 @@ form.addEventListener("submit", event => {
 
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
+        console.log('xhr loadend');
         if (response.target.status === 200) {
             form.reset();
             formResponse.innerHTML = 'Form submitted successfully!';
         } else {
             formResponse.innerHTML = 'Error! Please try again.';
             //console.error(JSON.parse(response.target.response).message);
-            }
+        }
         console.log('lambda response', response);
     };
 });
