@@ -47,13 +47,13 @@ form.addEventListener("submit", event => {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = `Thank you ${data.name},` + xhr.responseText;
+            formResponse.innerHTML = `Thank you ${data.name}, ${xhr.responseText}`;
         } else {
             formResponse.innerHTML = "Error! Please try again.";
             var error = JSON.parse(response.target)
             //console.error(JSON.parse(response.target.response).message);
         }
 
-        console.log('lambda response', xhr.responseText);
+        console.log('lambda response:', xhr.responseText);
     };
 });
