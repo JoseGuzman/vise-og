@@ -13,11 +13,12 @@ const endPoint = 'https://17fkopracb.execute-api.eu-central-1.amazonaws.com/defa
 
 form.addEventListener("submit", event => {
     event.preventDefault(); // prevent refreshing the page
-    const {email, name, message} = event.target;
+    const {email, name, phone, message} = event.target;
     
     let data = {
         name: name.value,
         email: email.value,
+        phone: phone.value,
         message: message.value
     };
 
