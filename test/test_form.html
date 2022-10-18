@@ -8,6 +8,7 @@
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  
     </head>
 
     <body>
@@ -40,6 +41,27 @@
         </form>
         </div>
     </div>
+
+    <div> 
+        <div>Country: <span id="country"></span></div>
+        <div>State: <span id="state"></span></div>
+        <div>City: <span id="city"></span></div>
+        <div>Latitude: <span id="latitude"></span></div>
+        <div>Longitude: <span id="longitude"></span></div>
+        <div>IP: <span id="ip"></span></div>
+        <script>
+            $.getJSON('https://geolocation-db.com/json/')
+                .done (function(location) {
+                $('#country').html(location.country_name);
+                $('#state').html(location.state);
+                $('#city').html(location.city);
+                $('#latitude').html(location.latitude);
+                $('#longitude').html(location.longitude);
+                $('#ip').html(location.IPv4);
+            });
+        </script>
+    </div>
+    </body>
 
 <script src="../js/form_test.js"></script> 
 <!-- Optional JavaScript -->
