@@ -41,14 +41,13 @@ form.addEventListener("submit", event => {
     // Send the collected data as JSON string
     xhr.send(JSON.stringify(data));
     console.log('Form sending: ', JSON.stringify(data)); 
-    console.log('lambda response:', xhr.responseText);
 
     // Update the component in the HTML form
     const formResponse = document.getElementById("lambda_text");
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             form.reset();
-            formResponse.innerHTML = "Thank you" + data.name + ", your form was submitted successfully!";
+            formResponse.innerHTML = `Thank you ${data.name}, your form was submitted successfully!`;
         } else {
             formResponse.innerHTML = "Error! Please try again.";
             var error = JSON.parse(response.target)
