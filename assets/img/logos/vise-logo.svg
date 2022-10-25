@@ -3,7 +3,7 @@
    viewBox="0 0 228.66 39.08"
    version="1.1"
    id="svg263"
-   sodipodi:docname="navbar-logo.svg"
+   sodipodi:docname="vise-logo.svg"
    inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
    xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -22,7 +22,7 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="5.4491384"
-     inkscape:cx="75.975314"
+     inkscape:cx="77.076405"
      inkscape:cy="41.933235"
      inkscape:window-width="2067"
      inkscape:window-height="1205"
@@ -30,19 +30,9 @@
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg263" /><style
-     id="style233">.cls-1{fill:#fed136;}</style><text
-     xml:space="preserve"
-     style="font-size:37.3333px;font-family:'Roboto Mono Medium for Powerline';-inkscape-font-specification:'Roboto Mono Medium for Powerline';fill:#fed136;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-     x="3.1197596"
-     y="34.684383"
-     id="text427"><tspan
-       sodipodi:role="line"
-       id="tspan425"
-       x="3.1197596"
-       y="34.684383"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Noteworthy;-inkscape-font-specification:Noteworthy;fill:#fed136;fill-opacity:1">ViSE</tspan></text><image
-     width="58.034641"
-     height="39.292194"
+     id="style233">.cls-1{fill:#fed136;}</style><image
+     width="65.318497"
+     height="44.223713"
      preserveAspectRatio="none"
      style="image-rendering:optimizeQuality"
      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACikAAAbhCAYAAADUpPGRAAAAIGNIUk0AAHomAACAhAAA+gAAAIDo
@@ -1395,5 +1385,5 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAeJf8L
 KpqJFwUnACYAAAAASUVORK5CYII=
 "
      id="image316"
-     x="78.522652"
-     y="-1.478047" /></svg>
+     x="-1.8286525"
+     y="-2.8427138" /></svg>
